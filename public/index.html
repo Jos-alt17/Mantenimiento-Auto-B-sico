@@ -8,12 +8,12 @@
 </head>
 <body>
     <header>
-        <h1>BIENVENIDO - Gestión de Vehículos</h1>
+        <h1>🚗 App de Mantenimiento Vehicular (MVP)</h1>
     </header>
 
     <main>
-        <section id="registro-vehiculo">
-            <h2>Registrar Nuevo Vehículo</h2>
+        <section id="registro-vehiculo" class="card">
+            <h2>1. Registrar Nuevo Vehículo</h2>
             <form id="form-registro-vehiculo">
                 <input type="text" id="marca" placeholder="Marca (Ej: Toyota)" required>
                 <input type="text" id="modelo" placeholder="Modelo (Ej: Corolla)" required>
@@ -24,8 +24,34 @@
             <p id="mensaje-registro"></p>
         </section>
 
-        <section id="lista-vehiculos">
-            <h2>Mis Vehículos Registrados</h2>
+        <section id="registro-mantenimiento" class="card">
+            <h2>2. Registrar Mantenimiento</h2>
+            <form id="form-registro-mantenimiento">
+                <select id="select-vehiculo" required>
+                    <option value="">-- Seleccione un Vehículo --</option>
+                </select>
+                
+                <input type="date" id="fecha-mantenimiento" required>
+                
+                <select id="tipo-mantenimiento" required>
+                    <option value="">-- Tipo de Mantenimiento --</option>
+                    <option value="Aceite">Cambio de Aceite</option>
+                    <option value="Frenos">Frenos</option>
+                    <option value="Neumaticos">Neumáticos</option>
+                    <option value="Revision">Revisión General</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                
+                <input type="number" id="costo" placeholder="Costo (€ o $)" required>
+                <textarea id="notas" placeholder="Notas adicionales o detalles del servicio"></textarea>
+                
+                <button type="submit">Guardar Mantenimiento</button>
+            </form>
+            <p id="mensaje-mantenimiento"></p>
+        </section>
+        
+        <section id="lista-vehiculos" class="card">
+            <h2>4. Mis Vehículos Registrados</h2>
             <table id="tabla-vehiculos">
                 <thead>
                     <tr>
@@ -34,11 +60,29 @@
                         <th>Modelo</th>
                         <th>Año</th>
                         <th>KM</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     </tbody>
             </table>
+        </section>
+        
+        <section id="historial-mantenimientos" class="card" style="display: none;">
+            <h2 id="historial-titulo">3. Historial de Mantenimientos para: </h2>
+            <table id="tabla-mantenimientos">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                        <th>Costo</th>
+                        <th>Notas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+            <p id="historial-vacio" style="display:none; color: gray;">No hay mantenimientos registrados para este vehículo.</p>
         </section>
     </main>
 

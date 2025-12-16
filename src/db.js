@@ -1,4 +1,4 @@
-
+// src/db.js
 const sqlite3 = require('sqlite3').verbose();
 const sqlite = require('sqlite');
 
@@ -11,7 +11,7 @@ async function initDb() {
         driver: sqlite3.Database
     });
 
-    // 1. Crear tabla de VEHÍCULOS
+    // 1. Crear tabla de VEHÍCULOS (Épica 1)
     await db.run(`
         CREATE TABLE IF NOT EXISTS Vehiculos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -23,7 +23,7 @@ async function initDb() {
         );
     `);
 
-    // 2. Crear tabla de MANTENIMIENTOS
+    // 2. Crear tabla de MANTENIMIENTOS (Épica 2)
     await db.run(`
         CREATE TABLE IF NOT EXISTS Mantenimientos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
