@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Mantenimiento Vehicular - MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BIENVENIDO - Gestión de Vehículos</h1>
+    </header>
+
+    <main>
+        <section id="registro-vehiculo">
+            <h2>Registrar Nuevo Vehículo</h2>
+            <form id="form-registro-vehiculo">
+                <input type="text" id="marca" placeholder="Marca (Ej: Toyota)" required>
+                <input type="text" id="modelo" placeholder="Modelo (Ej: Corolla)" required>
+                <input type="number" id="anio" placeholder="Año (Ej: 2020)" required>
+                <input type="number" id="km" placeholder="Kilometraje Actual" required>
+                <button type="submit">Guardar Vehículo</button>
+            </form>
+            <p id="mensaje-registro"></p>
+        </section>
+
+        <section id="lista-vehiculos">
+            <h2>Mis Vehículos Registrados</h2>
+            <table id="tabla-vehiculos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Año</th>
+                        <th>KM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
